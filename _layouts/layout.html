@@ -9,13 +9,13 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title> {{ page.title }}</title>
+    <title>{{ page.title }}</title>
 </head>
 
 <body>
 <header>
     <div class="inner">
-        <h1>{{ site.name }} </h1>
+        <h1><a href="/">{{ site.name }}</a></h1>
         <h2>Boring thoughts on software development</h2>
     </div>
 </header>
@@ -25,6 +25,10 @@
         <section id="main-content">
             {{ content }}
         </section>
+        <aside class="sidebar">
+            <h4>About me</h4>
+            <p>I'm a developer based in London mainly focusing on PHP and Symfony 2. From time to time I dabble in Silex, Javascript and Ruby. Every now and then I think beer.</p>
+        </aside>
     </div>
 </div>
 {% include footer.html %}
