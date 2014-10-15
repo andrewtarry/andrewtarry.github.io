@@ -441,6 +441,16 @@ footer img {
     aside#sidebar {
         display: none;
     }
+    #main-content h1:before,
+    #main-content h2:before,
+    #main-content h3:before,
+    #main-content h4:before,
+    #main-content h5:before,
+    #main-content h6:before {
+        content: none;
+        padding-right: 0;
+        margin-left: 0;
+    }
 }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
