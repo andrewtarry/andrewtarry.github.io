@@ -438,30 +438,8 @@ footer img {
         font-size: 13px;
         display: inline;
     }
-    #main-content,
     aside#sidebar {
-        float: none;
-        width: 100% ! important;
-    }
-    aside#sidebar {
-        background-image: none;
-        margin-top: 20px;
-        border-top: solid 1px #ddd;
-        padding: 20px 0;
-        min-height: 0;
-    }
-    aside#sidebar a.button {
         display: none;
-    }
-    #main-content h1:before,
-    #main-content h2:before,
-    #main-content h3:before,
-    #main-content h4:before,
-    #main-content h5:before,
-    #main-content h6:before {
-        content: none;
-        padding-right: 0;
-        margin-left: 0;
     }
 }
 
