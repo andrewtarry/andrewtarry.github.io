@@ -438,7 +438,7 @@ footer img {
         font-size: 13px;
         display: inline;
     }
-    aside#sidebar {
+    aside.sidebar {
         display: none;
     }
     #main-content h1:before,
