@@ -10,7 +10,7 @@ As of Symfony 2.5 there are 5 commands in the default composer.json and most of 
 
 ##buildBootstrap 
 
-The `Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap` command is required to build the `app/bootstrap.php.cache` file. The bootstrap file is neccissary for Symfony to correctly start. It is generated for you and the best thing to do is leave it alone to do it's job.
+The `ScriptHandler::buildBootstrap` command is required to build the `app/bootstrap.php.cache` file. The bootstrap file is neccissary for Symfony to correctly start. It is generated for you and the best thing to do is leave it alone to do it's job.
 
 ##clearCache 
 
