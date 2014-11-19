@@ -318,6 +318,7 @@ h6:before {
 
 p {
     margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 a {
@@ -326,6 +327,7 @@ a {
 
 p a {
     font-weight: 400;
+    word-wrap: break-word;
 }
 
 blockquote {
