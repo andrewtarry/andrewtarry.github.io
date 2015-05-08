@@ -21,6 +21,7 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    word-wrap: break-word;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -462,4 +463,9 @@ footer img {
 @media only screen and (min-width: 480px) and (max-width: 767px) {}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 479px) {
+
+  p {
+    word-wrap: break-word;
+  }
+}
