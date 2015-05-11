@@ -4,17 +4,17 @@ title: Symfony Default Composer Scripts
 description: Symfony has a number of composer scripts by default. Find out what they do
 ---
 
-Have you ever wanted to know what all the composer scripts in the default Symfony composer.json do? No? I didn't think so but nonetheless, lets have a look at them. 
+Have you ever wanted to know what all the composer scripts in the default Symfony composer.json do? No? I didn't think so but nonetheless, lets have a look at them.
 
-As of Symfony 2.5 there are 5 commands in the default composer.json and most of them are inside the `Sensio/Bundle/DistributionBundle/Composer/ScriptHandler`class. 
+As of Symfony 2.5 there are 5 commands in the default composer.json and most of them are inside the Sensio DistributionBundle Script Handler class. 
 
-##buildBootstrap 
+##buildBootstrap
 
 The `ScriptHandler::buildBootstrap` command is required to build the `app/bootstrap.php.cache` file. The bootstrap file is neccissary for Symfony to correctly start. It is generated for you and the best thing to do is leave it alone to do it's job.
 
-##clearCache 
+##clearCache
 
-The clear cache command will simply run `app/console cache:clear`, possibly with the `--no-warmup` flag depending on your configuration. This can be useful to make sure your cache is not referencing out of date dependencies. If you remove this line from the composer.json your application will still work but remember to clear the cache manually. 
+The clear cache command will simply run `app/console cache:clear`, possibly with the `--no-warmup` flag depending on your configuration. This can be useful to make sure your cache is not referencing out of date dependencies. If you remove this line from the composer.json your application will still work but remember to clear the cache manually.
 
 ##installAssets
 

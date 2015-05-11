@@ -14,7 +14,7 @@ Vagrant offers a number of provisioning tools that we could use and over the yea
 
 The feature of Chef that makes it a real winner for me is it's dependency management system [Berkshelf](http://berkshelf.com/). As a developer I don't want to spend a long time customising my environment, I want to use as many open source libraries as I can to speed up the process and let me focus on my work. Fortunately Chef has a fantastic selection of open source recipes for you to choose from. The main source is the [Chef Supermarket](https://supermarket.chef.io/) where you can find a recipe for most common tasks and, thanks to Berkshelf installing, them really easy.
 
-The setup 
+The setup
 ---------
 
 I'm going to assume you have Vagrant installed and but if not then head over to [Vagrant](https://www.vagrantup.com/ "Vagrant") and install it. You will also need to have the ChefDK installed to give yourself access to the tools we need. There is an installer available for most operating systems so just download it and run the install.
@@ -22,10 +22,10 @@ I'm going to assume you have Vagrant installed and but if not then head over to 
 Chef is available out the box with Vagrant but we will need to install a plugin to use Berkshelf, just run:
 
 	$ vagrant plugin install vagrant-berkshelf
-	
+
 Once the install is complete we will need to edit our Vagrantfile. Here is my Vagrantfile:
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
@@ -35,28 +35,28 @@ Vagrant.configure(2) do |config|
   end
 end
 {% endhighlight %}
-	
-As you can see I have changed the base box to use Ubuntu 14.04 and enabled the Berkshelf plugin. I have also added  a provisioning section to configure chef-solo. 
+
+As you can see I have changed the base box to use Ubuntu 14.04 and enabled the Berkshelf plugin. I have also added  a provisioning section to configure chef-solo.
 
 Provision with Chef
 -------------------
 
-When Vagrant provisions the VM with Chef it will look for recipes in Berkshelf and a directory called `cookbooks`. You can override this location but for this tutorial we'll leave it as the default. Make a directory called `cookbooks` and `cd` into it. 
+When Vagrant provisions the VM with Chef it will look for recipes in Berkshelf and a directory called `cookbooks`. You can override this location but for this tutorial we'll leave it as the default. Make a directory called `cookbooks` and `cd` into it.
 
 I like to set up a cookbook for my virtual machine and use that to resolve my dependencies. If you only need third party recipes you could just have a Berksfile but I think it's helpful to have a cookbook in case there are extra things you need to do. I'm going to call my cookbook dev because it is my development environment but you can call it whatever you like, if you plan to have more than one then name it something clear. To create the cookbook run:
 
 	$ berks cookbook dev
 
-This will create a dev directory with a template cookbook inside. 
+This will create a dev directory with a template cookbook inside.
 
 Adding libraries
 ----------------
 
-The goal of this project to is set up an automated virtual machine with as little work as possible so I'm not going to write any code if there are recipes available. To get started I'm going to add PHP to my VM. 
+The goal of this project to is set up an automated virtual machine with as little work as possible so I'm not going to write any code if there are recipes available. To get started I'm going to add PHP to my VM.
 
 In Chef Supermarket find the [Chef PHP library](https://supermarket.chef.io/cookbooks/php), the one I'm using has more than 29 million downloads so it's clearly been well tested. Copy the Berkshelf line and paste it into `cookbooks/Dev/Berksfile`. The file should look like this
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 source "https://supermarket.chef.io"
 
 metadata
@@ -72,7 +72,7 @@ The Vagrantfile
 
 The final step is to add the PHP recipe to your Chef run list. The run list is exactly as it sounds, it is a list of recipes for Chef to run. Below is the entire Vagrantfile and as you can see it has an array of recipes which include PHP.
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
@@ -83,11 +83,11 @@ Vagrant.configure(2) do |config|
 	  chef.run_list = [
 	      'recipe[php]'
 	    ]
-  
+
   end
 end
 {% endhighlight %}
-	
+
 I have set the location of the Berksfile because I want use the one in my recipe.
 
 The final step is to run `vagrant up` and you should see Chef running on your VM. Once it is complete you can do `vagrant ssh` and `php -v` to see that PHP has been installed by Chef.
