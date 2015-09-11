@@ -4,7 +4,7 @@ title: Andrew Tarry
 description: I'm a developer based in London mainly focusing on PHP and Symfony 2
 ---
 <ul class="postlist">
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <li class="post">
       <h2 class="title">
         <a href="{{ post.url }}">{{ post.title }}</a>
@@ -15,3 +15,12 @@ description: I'm a developer based in London mainly focusing on PHP and Symfony 
     </li>
     {% endfor %}
 </ul>
+
+<div class="pagination center">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous btn btn-default">Previous</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next btn btn-default">Next</a>
+  {% endif %}
+</div>
