@@ -13,22 +13,20 @@ Getting Docker installed depends your environment, Linux users can run Docker na
 
 To get started with Docker you first need to add a `Dockerfile` to the root of your application.
 
-{% highlight %}
-#Dockerfile
-FROM php:5.6-apache
+    FROM php:5.6-apache
 
-RUN apt-get update \
-  && apt-get install -y libicu-dev \
-  && docker-php-ext-install intl mbstring \
-  && a2enmod rewrite
+    RUN apt-get update \
+      && apt-get install -y libicu-dev \
+      && docker-php-ext-install intl mbstring \
+      && a2enmod rewrite
 
-COPY app/php.ini /usr/local/etc/php/
-COPY app/apache2.conf /etc/apache2/apache2.conf
-COPY ./ /var/www/html/
+    COPY app/php.ini /usr/local/etc/php/
+    COPY app/apache2.conf /etc/apache2/apache2.conf
+    COPY ./ /var/www/html/
 
-RUN chown -r www-data:www-data /var/www/html/app/cache /var/www/html/app/logs
-RUN chown -R 777 /var/www/html/app/cache /var/www/html/app/logs
-{% endhighlight %}
+    RUN chown -r www-data:www-data /var/www/html/app/cache /var/www/html/app/logs
+    RUN chown -R 777 /var/www/html/app/cache /var/www/html/app/logs
+
 
 This basic `Dockerfile` sets up everything is needed for a Symfony 2 application. There is a lot of documentation available for this file from [Docker](https://docs.docker.com/reference/builder/).
 
