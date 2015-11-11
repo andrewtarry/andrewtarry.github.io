@@ -86,7 +86,7 @@ The final parts of the `Dockerfile` copy the application to `/var/www/html` with
 
 ##Building the container
 
-Once all the files are in place the container can be built by running `docker run -t myname/symfony_apps:latest .`. This will build the container and you can then run it with `docker run -p 8080:80 myname/symfony_apps:latest` to see your application on port `8080`. Now you have a working container you can look into deploying to the AWS Container service or your own docker hosting environment.
+Once all the files are in place the container can be built by running `docker build -t myname/symfony_apps:latest .`. This will build the container and you can then run it with `docker run -p 8080:80 myname/symfony_apps:latest` to see your application on port `8080`. Now you have a working container you can look into deploying to the AWS Container service or your own docker hosting environment.
 
 ##But I want more information
 
