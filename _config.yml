@@ -13,7 +13,6 @@ kramdown:
   input: GFM
 
 gems:
-  - jekyll-sitemap
   - jekyll-paginate
 
 paginate: 5
