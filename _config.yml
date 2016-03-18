@@ -11,6 +11,7 @@ description: Web Developer from London
 baseurl: /
 markdown: kramdown
 permalink: /:title/
+highlighter: rouge
 
 gems:
   - jekyll-sitemap
