@@ -556,3 +556,7 @@ footer img {
   background-color: #fff;
   border-color: #ccc;
 }
+
+.code {
+    text-align: left;
+}

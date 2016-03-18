@@ -72,7 +72,7 @@ The Vagrantfile
 
 The final step is to add the PHP recipe to your Chef run list. The run list is exactly as it sounds, it is a list of recipes for Chef to run. Below is the entire Vagrantfile and as you can see it has an array of recipes which include PHP.
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
@@ -80,9 +80,9 @@ Vagrant.configure(2) do |config|
   config.berkshelf.berksfile_path = "./cookbooks/dev/Berksfile"
 
   config.vm.provision :chef_solo do |chef|
-	  chef.run_list = [
-	      'recipe[php]'
-	    ]
+  chef.run_list = [
+    'recipe[php]'
+  ]
 
   end
 end
