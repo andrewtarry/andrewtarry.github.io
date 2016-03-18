@@ -72,7 +72,7 @@ The Vagrantfile
 
 The final step is to add the PHP recipe to your Chef run list. The run list is exactly as it sounds, it is a list of recipes for Chef to run. Below is the entire Vagrantfile and as you can see it has an array of recipes which include PHP.
 
-{% highlight ruby %}
+```ruby
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
@@ -86,8 +86,7 @@ Vagrant.configure(2) do |config|
 
   end
 end
-{% endhighlight %}
-
+```
 I have set the location of the Berksfile because I want use the one in my recipe.
 
 The final step is to run `vagrant up` and you should see Chef running on your VM. Once it is complete you can do `vagrant ssh` and `php -v` to see that PHP has been installed by Chef.

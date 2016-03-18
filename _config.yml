@@ -10,7 +10,6 @@ description: Web Developer from London
 
 baseurl: /
 markdown: kramdown
-#highlighter: pygments
 permalink: /:title/
 
 gems:
