@@ -9,9 +9,11 @@ name: Andrew Tarry
 description: Web Developer from London
 
 baseurl: /
-markdown: kramdown
 permalink: /:title/
-highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 gems:
   - jekyll-sitemap
