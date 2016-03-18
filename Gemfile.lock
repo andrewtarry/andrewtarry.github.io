@@ -130,6 +130,7 @@ DEPENDENCIES
   github-pages
   jekyll
   jekyll-paginate
+  jekyll-sitemap
   rouge
 
 BUNDLED WITH
