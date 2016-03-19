@@ -56,14 +56,12 @@ The goal of this project to is set up an automated virtual machine with as littl
 
 In Chef Supermarket find the [Chef PHP library](https://supermarket.chef.io/cookbooks/php), the one I'm using has more than 29 million downloads so it's clearly been well tested. Copy the Berkshelf line and paste it into `cookbooks/Dev/Berksfile`. The file should look like this
 
-{% highlight ruby linenos %}
+```ruby
 source "https://supermarket.chef.io"
 
 metadata
-
 cookbook 'php', '~> 1.5.0'
-
-{% endhighlight %}
+```
 
 That is everything you need to do import the recipe to use in your virtual machine.
 
