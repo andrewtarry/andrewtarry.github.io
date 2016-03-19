@@ -8,7 +8,7 @@ Jenkins offers a lot of great features beyond just testing your code. Today we w
 
 A simple solution to this problem is to only allow Jenkins to handle this merge. Jenkins can merge the branches, do the tests and then push the changes back to the repository if the tests all pass. This way you know the `master` branch is always clean.
 
-##Set up
+## Set up
 
 I assume you have Jenkins installed and the git plugin enabled. To add the merge you need to find the `Additional Behaviours` section under `Source Code Management` and open the `Add` drop down. Select `Merge before build` and an additional section will be added to the form.
 
@@ -16,11 +16,11 @@ I assume you have Jenkins installed and the git plugin enabled. To add the merge
 
 Here I am merging the `develop` branch into `master` before I run my tests. If there are any merge conflicts the test will fail, which is likely to be what you want because you should fix the conflict before merging to a stable branch.
 
-##Running the tests
+## Running the tests
 
 Once the merge is successful Jenkins will continue as normal. Assuming your tests pass you will see the job complete and you can then be confident in merging your code.
 
-##Pushing the merge
+## Pushing the merge
 
 If you would like to push result of the merge back to your repository you will need the Git Publisher post build action that comes with the [Git Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin). I would suggesting checking the boxes for `Push Only If Build Succeeds` and `Merge Results`. Some people like to add tags or notes but that's up to you.
 

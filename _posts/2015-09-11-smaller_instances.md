@@ -8,7 +8,7 @@ I am a big fan of Amazon Web Services and host a lot of projects there. One thin
 
 If the only answer is a bigger instance then you're probably doing it wrong!
 
-##Structuring a web application
+## Structuring a web application
 
 Web based applications are likely to be the common use case people are facing and they are a prime example of bigger not being better. All web applications are roughly the same from a very high level:
 
@@ -23,7 +23,7 @@ The great benefit of hosting an application on AWS is that your application can 
 
 AWS based applications should be able to scale horizontally, meaning that if your application needs more power the solution is more servers rather than bigger servers. The advantage is that you have far greater redundancy in your application and you have the option to scale down when the load reduces.
 
-##My application needs more resources
+## My application needs more resources
 
 There are times when a process needs to use more resources than you can get from medium instances. If that is the case then it's time to think about how the application works.
 
@@ -38,7 +38,7 @@ I'm not suggesting every application can be split up like this, if you are doing
 
 The big danger of AWS is the temptation to think the resources are unlimited and that you can start those large instances whenever you need to. The problem is that once that mindset is in your team those large instances add up quickly and you are hiding a problem in the code by add more resources.
 
-##My process only runs quickly and then shuts down
+## My process only runs quickly and then shuts down
 
 Sometimes an application will only need to run and then shutdown the instances. Anything that responds to events might fit that pattern or test cases in a continus integration environment.
 

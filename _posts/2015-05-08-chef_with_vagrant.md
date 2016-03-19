@@ -25,7 +25,7 @@ Chef is available out the box with Vagrant but we will need to install a plugin 
 
 Once the install is complete we will need to edit our Vagrantfile. Here is my Vagrantfile:
 
-{% highlight ruby linenos %}
+```ruby
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
@@ -34,7 +34,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision :chef_solo do |chef|
   end
 end
-{% endhighlight %}
+```
 
 As you can see I have changed the base box to use Ubuntu 14.04 and enabled the Berkshelf plugin. I have also added  a provisioning section to configure chef-solo.
 
@@ -93,7 +93,7 @@ The final step is to run `vagrant up` and you should see Chef running on your VM
 
 The next step is to add more features to your virtual machine by locating recipes in Chef Supermarket and loading them in the same way.
 
-###Some useful links
+##  Some useful links
 
 * [Chef](https://www.chef.io/)
 * [Berkshelf](http://berkshelf.com/)
