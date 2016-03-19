@@ -42,7 +42,7 @@ The `php.ini` can be tailored to the application but make sure you set the `date
 
 Apache can be configured in the same way as php so you can put an Apache configuration file in your project. In the docker container you will only be running a single application so there is no need for virtual hosts. Here is an example Apache 2 configuration file
 
-```apache
+```Apache
 User www-data
 Group www-data
 ErrorLog /proc/self/fd/2
