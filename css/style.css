@@ -124,11 +124,12 @@ a.button {
     width: 134px;
     height: 58px;
     line-height: 1.2;
-    font-size: 23px;
+    font-size: 16px;
     color: #fff;
-    padding-left: 68px;
-    padding-top: 22px;
+    padding: 4px 10px;
+    border-radius: 6px;
     font-family: 'Arimo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #2879d0;
 }
 a.button small {
     display: block;
