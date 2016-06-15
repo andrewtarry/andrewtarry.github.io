@@ -1,1 +1,0 @@
-I don't get to work with Ruby applications as much as I would like to so I enjoyed the recent opportunity to build a Sinatra based api. Once of the things I did was use the Active Record gem to handle the database interactions. In this article
