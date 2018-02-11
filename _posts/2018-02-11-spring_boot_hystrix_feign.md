@@ -176,11 +176,14 @@ Since we're not using Eureka in this example the url of the servers we want to s
 ```yaml
 eureka:
     enabled: false
-    
- 
+
 ribbon:
     products:
       listOfServers: api1.example.com,api2.example.com
+
+feign:
+  hystrix:
+    enabled: true
 ```
 
 The configuration has firstly disabled Eureka, this should be option but if Eureka is on the classpath it will interfere with ribbon configuration so its best to be explicit.
