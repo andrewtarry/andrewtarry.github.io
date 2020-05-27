@@ -69,6 +69,7 @@ DEPENDENCIES
   jekyll (~> 4.1.0)
   jekyll-feed (~> 0.6)
   jekyll-paginate
+  jekyll-sass-converter
   jekyll-sitemap
   rouge
 

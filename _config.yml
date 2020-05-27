@@ -20,3 +20,9 @@ plugins:
 
 paginate: 5
 paginate_path: "/blog/page:num/"
+
+preload:
+  - https://adservice.google.com
+  - https://pagead2.googlesyndication.com
+  - https://adservice.google.co.uk
+  - https://www.google-analytics.com
