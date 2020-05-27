@@ -2,7 +2,8 @@
 name: Andrew Tarry
 
 # Short bio or description (displayed in the header)
-description: Web Developer from London
+description: Software Engineer, Architect, DevOps Engineer and Technologist (from London)
+url: "https://andrewtarry.com"
 
 baseurl: /
 permalink: /:title/
@@ -12,8 +13,10 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-gems:
+plugins:
   - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap
 
 paginate: 5
 paginate_path: "/blog/page:num/"
