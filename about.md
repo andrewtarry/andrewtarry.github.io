@@ -4,28 +4,16 @@ title: About me
 description: All about a London based software developer
 ---
 
-I have been a software developer for a number of years working in London. At the moment I work for a tech consultancy and work on a wide range of projects. My time is spent on developing applications, manging dev ops projects and managing teams. 
+I am solution-orientated technical expert with experience delivering across a range of industries including major banking organisations, government and technology firms. 
 
-As a tech lead on various projects I run a team and lead it as a hands on developer but also manage architecture, dev ops, production support and code standards.
+Over the years I have worked as an Engineer, Technical Lead, Architect and Director.
 
-My tech stack seems to be growing day by day but a few of the highlights include:
+I have always been passionate about technology and now I work on problems from a broader perspective to find the right solution. Today I manage a growing team of Engineers, Analysts, Testers and DevOps experts to offer solutions to a number of clients. We champion high quality, tailored solutions to tackle complex problems in a sustainable, scalable and simple way. 
 
-* Java
-* Spring
-* Jackson
-* JavaScript
-* PHP
-* Ruby
-* Amazon Web Services
-* Docker
-* Terraform
-* Symfony
-* Zend Framework
-* DropWizard
-* Jenkins
+My main interest is delivering high quality systems into production and getting them in the hands of real users. I believe that every project should be focused on delivering first, we need to focus on delivery and the approach or technology need to serve that goal.
 
-I'm sure there's a lot more that I've forgotten and I'll add later.
+## Contact me
 
-Recently completed my first Amazon exam and there will be more to follow
+The best way to contact me is via my [Linked profile](https://www.linkedin.com/in/andrew-tarry-53a14022/) or [Twitter](https://twitter.com/AndrewTarry3).
 
 ![AWS Developer](/images/Developer-Associate.png)
