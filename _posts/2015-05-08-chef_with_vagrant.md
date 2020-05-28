@@ -65,6 +65,8 @@ cookbook 'php', '~> 1.5.0'
 
 That is everything you need to do import the recipe to use in your virtual machine.
 
+{% include googleAd.html %}
+
 The Vagrantfile
 ----------------
 

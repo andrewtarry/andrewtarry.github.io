@@ -40,6 +40,8 @@ Here is a simple config file for an app that we might be building. We are using 
 
 The app can communicate with the database or redis using the `db` and `redis` as their host names. 
 
+{% include googleAd.html %}
+
 ## Being a bit cleaver with host names
 
 One of the difficult things with simple host names is that they are rarely like that in a real environment, you might be dealing with `redis.internal.prod.example.com` rather than simply `redis`. You can get around this problem with different configuration files or environment variables but it would be even better if you had those real domain names that you could use. You might also find that production has several database servers but in development you only want to use one, so how can you handle multiple domains.

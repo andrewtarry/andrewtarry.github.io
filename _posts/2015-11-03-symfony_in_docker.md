@@ -32,6 +32,8 @@ This basic `Dockerfile` sets up everything is needed for a Symfony 2 application
 
 The docker image is based on the offical PHP 5.6 image and it comes with Apache installed. The first run block will install the PHP intl and mbstring extensions that are used by Symfony. Then the Apache rewrite module is enabled.
 
+{% include googleAd.html %}
+
 ## Configuring PHP
 
 Once of the biggest advantages that Docker provides is an isolated environment for an application. In the next line of the file we are running `COPY app/php.ini /usr/local/etc/php/`. This will copy a `php.ini` from the app directory in your application. A template file can be found in the [PHP Repository](https://github.com/php/php-src/blob/master/php.ini-production).

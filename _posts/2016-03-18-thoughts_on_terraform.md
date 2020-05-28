@@ -54,7 +54,9 @@ resource "aws_cloudformation_stack" "my_stack" {
 
 Here is an example of why I don't like the current approach. We have a comma separated string of `things` that create a number of templates and use those templates to create CloudFormation stacks (I'm just using CloudFormation as an example but this is fairly common). The reliance on splitting strings and using indexes makes the code hard to understand and easy to mess up. It's also extremely limited, if you have more that 1 variable then you have to use 2 comma separated strings that have their values in the right order so you can split them in the right way. The danger in a large environment is enormous.
  
- There are feature requests open for these issues but they have not been added yet. It's a complex thing to code so I understand they take time but I'm really hoping to see them soon.
+There are feature requests open for these issues but they have not been added yet. It's a complex thing to code so I understand they take time but I'm really hoping to see them soon.
+
+{% include googleAd.html %}
  
 ### Declarative commands
  

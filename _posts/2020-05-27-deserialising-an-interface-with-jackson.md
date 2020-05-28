@@ -64,6 +64,8 @@ public interface MyInterface {
 
 This tells Jackson to deserialise to an instance of the `MyInterfaceImpl` class (as long as `MyInterfaceImpl` implements `MyInterface`). 
 
+{% include googleAd.html %}
+
 ## Scenario 2: when you control the interface and there is more than one implementation
 
 Things get a little more complex when there we need to introduce polymorphism into the code base. If we need to support multiple implementations we need to have a way for Jackson to know which implementation to use.

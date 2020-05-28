@@ -124,6 +124,8 @@ class ExampleApplication {
 
 The main class is fairly simple, just a standard Spring Boot main method but with the addition of the `@EnableFeignClients` annotation. This will allow Spring Boot to scan for Feign clients.
 
+{% include googleAd.html %}
+
 ## The Client
 
 ```java

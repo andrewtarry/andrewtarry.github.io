@@ -36,6 +36,8 @@ The extensions that your application needs should then be added to you composer.
         
 Heroku will install all the extensions and the runtime that you need. Details of the [supported packages are available from Heroku](https://devcenter.heroku.com/articles/PHP-support).
 
+{% include googleAd.html %}
+
 ### Servers
 
 As you would expect Heroku supports both Nginx and Apache, using PHP-fpm which is always installed. Setting up the web server correctly requires some configuration but it's fairly simple.
@@ -93,6 +95,8 @@ To solve this problem you need to tell Heroku to use the PHP build system rather
 	$ heroku config:set BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-PHP
 	
 Heroku will now always build your app with PHP rather than node.
+
+{% include googleAd.html %}
 
 ### Composer Scripts
 
