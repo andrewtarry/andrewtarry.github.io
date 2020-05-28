@@ -110,7 +110,7 @@ The `type` value is only used by Jackson so needing to include it in the API may
 
 This approach might work if your API is internal or the `type` property is an existing, well understood value but I would argue that for external API’s it might not be right approach.
 
-##Scenario 3: when you do not control the interface
+## Scenario 3: when you do not control the interface
 
 The other possibility is that you do not have the option to add annotations. It might be that you need to deserialise to a POJO that’s managed but a third party and introducing annotations is not possible. For this we need to look at custom code.
 
