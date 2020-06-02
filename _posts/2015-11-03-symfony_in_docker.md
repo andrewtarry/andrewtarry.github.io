@@ -2,6 +2,9 @@
 layout: post
 title: Symfony in a Docker Container
 description: Symfony can be run in a Docker container to give you a really light weight and flexible way to manage your app
+date: 2015-11-03 14:10:00 +0000
+categories: [Docker, Symfony]
+tags: [docker, symfony]
 ---
 Docker provides an extremely flexible way to package and deploy a Symfony 2 application. This guide will help you get an application running in a container so it can be deployed to any environment that supports Docker.
 
@@ -13,20 +16,21 @@ Getting Docker installed depends your environment, Linux users can run Docker na
 
 To get started with Docker you first need to add a `Dockerfile` to the root of your application.
 
-    FROM php:5.6-apache
+```dockerfile
+FROM php:5.6-apache
 
-    RUN apt-get update \
-      && apt-get install -y libicu-dev \
-      && docker-php-ext-install intl mbstring \
-      && a2enmod rewrite
+RUN apt-get update \
+  && apt-get install -y libicu-dev \
+  && docker-php-ext-install intl mbstring \
+  && a2enmod rewrite
 
-    COPY app/php.ini /usr/local/etc/php/
-    COPY app/apache2.conf /etc/apache2/apache2.conf
-    COPY ./ /var/www/html/
+COPY app/php.ini /usr/local/etc/php/
+COPY app/apache2.conf /etc/apache2/apache2.conf
+COPY ./ /var/www/html/
 
-    RUN chown -r www-data:www-data /var/www/html/app/cache /var/www/html/app/logs
-    RUN chown -R 777 /var/www/html/app/cache /var/www/html/app/logs
-
+RUN chown -r www-data:www-data /var/www/html/app/cache /var/www/html/app/logs
+RUN chown -R 777 /var/www/html/app/cache /var/www/html/app/logs
+```
 
 This basic `Dockerfile` sets up everything is needed for a Symfony 2 application. There is a lot of documentation available for this file from [Docker](https://docs.docker.com/reference/builder/).
 
@@ -44,7 +48,7 @@ The `php.ini` can be tailored to the application but make sure you set the `date
 
 Apache can be configured in the same way as php so you can put an Apache configuration file in your project. In the docker container you will only be running a single application so there is no need for virtual hosts. Here is an example Apache 2 configuration file
 
-```Apache
+```
 User www-data
 Group www-data
 ErrorLog /proc/self/fd/2

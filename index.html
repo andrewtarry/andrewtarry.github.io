@@ -1,27 +1,12 @@
 ---
-layout: layout
-title: Andrew Tarry
-description: I'm a software developer based in London
----
-<ul class="postlist">
-    {% for post in paginator.posts %}
-    <li class="post">
-      <h2 class="title">
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </h2>
-        <p>{{ post.content | strip_html | truncatewords:75}}<br>
-            <a href="{{ post.url }}">Read more...</a>
-        </p>
-    </li>
-    {% endfor %}
-</ul>
+layout: home
+breadcrumb:
+  -
+    label: Posts
 
-<div class="pagination center">
-    {% include googleAd.html %}
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous btn btn-default">Previous</a>
-  {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next btn btn-default">Next</a>
-  {% endif %}
-</div>
+# Index page
+# v2.0
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# © 2017-2019 Cotes Chung
+# MIT License
+---

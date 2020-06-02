@@ -2,6 +2,9 @@
 layout: post
 title: Symfony Default Composer Scripts
 description: Symfony has a number of composer scripts by default. Find out what they do
+date: 2014-11-14 14:10:00 +0000
+categories: [PHP, Symfony]
+tags: [symfony, php]
 ---
 
 Have you ever wanted to know what all the composer scripts in the default Symfony composer.json do? No? I didn't think so but nonetheless, lets have a look at them.

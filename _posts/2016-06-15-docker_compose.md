@@ -2,6 +2,9 @@
 layout: post
 title: Using hostnames in docker compose
 description: Using hostnames in docker compose
+date: 2016-06-15 14:10:00 +0000
+categories: [Docker]
+tags: [docker, docker compose]
 ---
 
 
@@ -13,7 +16,7 @@ One of the best tools in the docker ecosystem is [docker compose](https://docs.d
 
 Docker compose uses a configuration file which is, logically, called `docker-compose.yml`. 
 
-```YAML
+```yaml
 version: '2'
 services:
 
@@ -48,7 +51,7 @@ One of the difficult things with simple host names is that they are rarely like 
 
 Fortunately docker compose provides a nice way to handle this.
 
-```YAML
+```yaml
 version: '2'
 services:
 

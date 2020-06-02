@@ -1,0 +1,20 @@
+#  The contact options.
+#  v2.3
+#  https://github.com/cotes2020/jekyll-theme-chirpy
+#  © 2020 Cotes Chung
+#  MIT Licensed
+
+-
+  type: github
+  icon: 'fab fa-github-alt'
+-
+  type: twitter
+  icon: 'fab fa-twitter'
+
+- icon: 'fab fa-linkedin'
+  url:  https://uk.linkedin.com/in/andrew-tarry-53a14022
+
+-
+  type: rss
+  icon: 'fas fa-rss'
+  noblank: true

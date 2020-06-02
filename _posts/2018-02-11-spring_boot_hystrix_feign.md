@@ -2,6 +2,9 @@
 layout: post
 title: Spring Boot, Feign, Ribbon and Hystrix
 description: Setting up Feign, Ribbon and Hystrix with Spring Boot
+date: 2018-02-11 14:10:00 +0000
+categories: [Java, Spring Boot]
+tags: [java, spring boot]
 ---
 
 Using Spring Boot with the Netfix OSS toolset is easy thanks to some excellent integration libraries. In a modern microservice based application it has become even more important to handle downstream failures properly and Netflix have provided a particularly neat solution for that.
