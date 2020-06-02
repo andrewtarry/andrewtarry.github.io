@@ -2,6 +2,9 @@
 layout: post
 title: You don't need a bigger instance
 description: Amazon Web Services offer massive instances but if you structure your application properly you don't need them
+date: 2015-09-11 14:10:00 +0000
+categories: [DevOps, AWS]
+tags: [aws, devops]
 ---
 
 I am a big fan of Amazon Web Services and host a lot of projects there. One thing I keep on hearing from people when they first start using AWS is that they need a bigger instance. I have heard over and over again that 'we need 4xlarge instance to run our application', that normally means it has not been designed properly for the cloud.

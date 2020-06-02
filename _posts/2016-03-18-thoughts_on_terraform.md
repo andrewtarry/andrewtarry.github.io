@@ -2,6 +2,9 @@
 layout: post
 title: Thoughts on Terraform
 description: Terraform is a great tool for managing AWS but there few issues with it.
+date: 2016-03-18 14:10:00 +0000
+categories: [DevOps, Terraform]
+tags: [terraform]
 ---
 
 I recently go involved in a number of projects using [Terraform](https://www.terraform.io) to create AWS environments. Having spent a lot of the last few weeks looking at nothing but Terraform here are some of my thoughts about it. 
@@ -36,7 +39,7 @@ I would love to see some proper control structures in the Terraform syntax. Ther
  
  Loops in Terraform are sort of available but they are a bit horrible. 
  
-```
+```hcl
 resource "template_file" "my_template" {
     count = "${length(split(",", var.things))}"
     template = "${file("${path.module}/cloudfront.cf.json")}"

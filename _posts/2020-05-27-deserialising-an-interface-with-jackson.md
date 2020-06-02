@@ -2,6 +2,9 @@
 layout: post
 title: Deserializing an interface with Jackson
 description: Using Java and json together can make it hard to manage deserialisation correctly when using interfaces. Here we show the solution to 3 common scenarios
+date: 2020-05-27 14:10:00 +0000
+categories: [Tutorial, Java]
+tags: [java, jackson, json]
 ---
 
 Jackson is my favourite library for mapping Json to a Java object and most of the time it can map your objects to a POJO but when using interfaces it takes a bit more work.
@@ -9,7 +12,7 @@ Jackson would normally read the types from the POJO that you attempt to use but 
 
 In the examples below I want to show how we can deserialize a simple json body into a POJO. The json body is:
 
-```Json
+```json
 {
   "myInterface": {
     "a": "Z",
@@ -98,7 +101,7 @@ To support multiple implementations we need to use the `@JsonSubTypes` annotatio
 
 The advantage of this is that we can control the implementation easily but we are not exposing details of our deserialisation logic into the API. The JSON body will need to look like this.
 
-```Json
+```json
 {
   "myInterface": {
     "a": "Z",

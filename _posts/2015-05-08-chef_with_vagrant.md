@@ -2,6 +2,9 @@
 layout: post
 title: Provisioning Vagrant with Chef
 description: Provisioning Vagrant with Chef is an extremely powerful way to build your environment but can be hard to learn. This article will give you the basics
+date: 2015-05-08 14:10:00 +0000
+categories: [DevOps, Chef]
+tags: [devops, chef]
 ---
 
 
