@@ -1,5 +1,5 @@
 <!--
-  The paginator for post list on HomgPage.
+  The paginator for post list on HomePage.
 
   v2.1
   https://github.com/cotes2020/jekyll-theme-chirpy
@@ -11,7 +11,7 @@
   <!-- left arrow -->
   {% if paginator.previous_page %}
   <li class="page-item">
-    <a class="page-link btn-box-shadow" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
+    <a class="page-link btn-box-shadow" href="{{ site.baseurl }}{{ paginator.previous_page_path }}" aria-label="previous page">
       <i class="fas fa-angle-left"></i>
     </a>
   </li>
@@ -75,7 +75,7 @@
   <!-- right arrow -->
   {% if paginator.next_page %}
   <li class="page-item">
-    <a class="page-link btn-box-shadow" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
+    <a class="page-link btn-box-shadow" href="{{ site.baseurl }}{{ paginator.next_page_path }}" aria-label="next page">
       <i class="fas fa-angle-right"></i>
     </a>
   </li>
