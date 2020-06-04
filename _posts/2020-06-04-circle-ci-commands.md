@@ -7,6 +7,8 @@ categories: [DevOps, Circle CI]
 tags: [circle ci, devops, pipeline]
 ---
 
+![Circle CI command](/assets/img/cicleci-title/cicleci-title.001.jpeg)
+
 Cricle CI now as the option to create reusable steps in your pipeline that act almost as functions. Using commands it is now possible to create standard parts of the pipeline without needing to use external tools.
 
 Commands are a great feature that seem to be a bit buried in the rest of the [documentation](https://circleci.com/docs/2.0/configuration-reference/#commands-requires-version-21). Here I will try to talk about them in some more detail.
