@@ -28,8 +28,8 @@ orbs:
 workflows:
   build:
     jobs:
-		- project1
-		- project2
+    - project1
+    - project2
 
 jobs:
 
@@ -38,24 +38,24 @@ jobs:
       name: node/default
       tag: '12.16'
     steps:
-      - checkout
-      - node/install-yarn
-      - restore_cache:
-          key: dependency-cache-{{ checksum "project1/yarn.lock" }}
-      - run:
-          name: Yarn install
-          command: yarn
-          working_directory: project1
-      - save_cache:
-          key: dependency-cache-{{ checksum "project1/yarn.lock" }}
-          paths:
-            - project1/node_modules
-	- run:
-          name: Yarn test
-          command: yarn test
-          working_directory: project1
-          environment:
-            CI: true
+    - checkout
+    - node/install-yarn
+    - restore_cache:
+        key: dependency-cache-{{ checksum "project1/yarn.lock" }}
+    - run:
+        name: Yarn install
+        command: yarn
+        working_directory: project1
+    - save_cache:
+        key: dependency-cache-{{ checksum "project1/yarn.lock" }}
+        paths:
+          - project1/node_modules
+    - run:
+        name: Yarn test
+        command: yarn test
+        working_directory: project1
+        environment:
+          CI: true
 
 
   project2:
@@ -75,7 +75,7 @@ jobs:
           key: dependency-cache-{{ checksum "project2/yarn.lock" }}
           paths:
             - project2/node_modules
-	- run:
+      - run:
           name: Yarn test
           command: yarn test
           working_directory: project1
@@ -103,8 +103,8 @@ orbs:
 workflows:
   build:
     jobs:
-		- project1
-		- project2
+    - project1
+    - project2
 
 jobs:
 
@@ -163,34 +163,34 @@ orbs:
 workflows:
   build:
     jobs:
-		- project1
-		- project2
+    - project1
+    - project2
 
 commands:
-	yarn_test:
-		description: Configure Yarn
-	    parameters:
-	      directory:
-	        type: string
-	    steps:
-		  - checkout
-	      - node/install-yarn
-	      - restore_cache:
-	          key: dependency-cache-{{ checksum "<< parameters.directory >>/yarn.lock" }}
-	      - run:
-	          name: Yarn install
-	          command: yarn
-	          working_directory: << parameters.directory >>
-	      - save_cache:
-	          key: dependency-cache-{{ checksum "<< parameters.directory >>/yarn.lock" }}
-	          paths:
-	            - << parameters.directory >>/node_modules
-		- run:
-	          name: Yarn test
-	          command: yarn test
-	          working_directory: << parameters.directory >>
-	          environment:
-	            CI: true
+    yarn_test:
+        description: Configure Yarn
+        parameters:
+          directory:
+            type: string
+        steps:
+          - checkout
+          - node/install-yarn
+          - restore_cache:
+              key: dependency-cache-{{ checksum "<< parameters.directory >>/yarn.lock" }}
+          - run:
+              name: Yarn install
+              command: yarn
+              working_directory: << parameters.directory >>
+          - save_cache:
+              key: dependency-cache-{{ checksum "<< parameters.directory >>/yarn.lock" }}
+              paths:
+                - << parameters.directory >>/node_modules
+        - run:
+              name: Yarn test
+              command: yarn test
+              working_directory: << parameters.directory >>
+              environment:
+                CI: true
 
 
 jobs:
@@ -200,16 +200,16 @@ jobs:
       name: node/default
       tag: '12.16'
     steps:
-		- yarn_test:
-			directory: project1
+        - yarn_test:
+            directory: project1
 
   project2:
     executor:
       name: node/default
       tag: '12.16'
     steps:
-		- yarn_test:
-			directory: project2
+        - yarn_test:
+            directory: project2
 
 ```
 
