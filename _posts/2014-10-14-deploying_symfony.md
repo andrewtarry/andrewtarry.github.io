@@ -4,7 +4,7 @@ title: Symfony 2 on Heroku
 description: Hosting Symfony 2 apps on Heroku is easy and useful but there are a steps to take before deploying
 date: 2014-10-14 14:10:00 +0000
 categories: [PHP, Symfony]
-tags: [phy symfony]
+tags: [php, symfony]
 ---
 
 Since Heroku started supporting PHP it has become a valuable hosting option for Symfony apps. It offers a nice middle ground between the lack of control you get with shared hosting and the workload of hosting the site yourself with AWS or Rackspace. Heroku offers managed hosting so it's less for you to worry about but it offers the flexibility changing PHP extensions and using plugins. It is not as flexible as a service like AWS but the work is a lot less and I have found their support to be very good when you have a problem.
