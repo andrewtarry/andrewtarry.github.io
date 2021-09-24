@@ -49,7 +49,7 @@ In this example, we are creating a basic user pool and a client to interact with
 Now that we have Cognito, we can set up the API gateway.
 
 
-```t
+```
 resource "aws_apigatewayv2_api" "gateway" {
   name = "example_api"
   protocol_type = "HTTP"
