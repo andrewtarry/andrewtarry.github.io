@@ -2,7 +2,7 @@
 layout: post
 title: Setting up EKS with Terraform, Helm and a Load balancer
 description: Use Terraform to deploy a new AWS Elastic Kubernetes Cluster with a Helm chart and Application Load Balancer
-date: 2022-04-20 14:10:00 +0000
+date: 2022-04-20 01:10:00 +0000
 categories: [DevOps, AWS, Terraform, EKS, Kubernetes]
 tags: [aws, terraform, kubernetes, eks]
 ---
