@@ -11,76 +11,77 @@ Setting up a new Kubernetes cluster is a common task for DevOps Engineer these d
 
 ## Setting up EKS
 
-Kubernetes is a complex tool and AWS provide a lot of options to meet almost any need. The problem with that is that it can give you too many options and it can be a little overwhelming. Here is the module I generally use:
+Kubernetes is a complex tool and AWS provide a lot of options to meet almost any need. The problem with that is that it can give you too many options and it can be a little overwhelming. 
 
-{% highlight terraform linenos %}
-resource "aws_security_group" "eks" {
-  name        = "${var.env_name} eks cluster"
-  description = "Allow traffic"
-  vpc_id      = var.vpc_id
+Here is the module I generally use
 
-  ingress {
-    description      = "World"
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+```terraform
+  resource "aws_security_group" "eks" {
+    name        = "${var.env_name} eks cluster"
+    description = "Allow traffic"
+    vpc_id      = var.vpc_id
 
-  egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
-
-  tags = merge({
-    Name = "EKS ${var.env_name}",
-    "kubernetes.io/cluster/${local.eks_name}": "owned"
-  }, var.tags)
-}
-
-module "eks" {
-  source = "terraform-aws-modules/eks/aws"
-  version = "18.19.0"
-
-  cluster_name                    = var.eks_name
-  cluster_version                 = "1.21"
-  cluster_endpoint_private_access = true
-  cluster_endpoint_public_access  = true
-  cluster_additional_security_group_ids = [aws_security_group.eks.id]
-
-  vpc_id     = var.vpc_id
-  subnet_ids = var.private_subnet_ids
-
-  eks_managed_node_group_defaults = {
-    ami_type               = "AL2_x86_64"
-    disk_size              = 50
-    instance_types         = ["t3.medium", "t3.large"]
-    vpc_security_group_ids = [aws_security_group.eks.id]
-  }
-
-  eks_managed_node_groups = {
-    green = {
-      min_size     = 1
-      max_size     = 10
-      desired_size = 3
-
-      instance_types = ["t3.medium"]
-      capacity_type  = "SPOT"
-      labels = var.tags 
-      taints = {
-      }
-      tags = var.tags
+    ingress {
+      description      = "World"
+      from_port        = 0
+      to_port          = 0
+      protocol         = "-1"
+      cidr_blocks      = ["0.0.0.0/0"]
+      ipv6_cidr_blocks = ["::/0"]
     }
+
+    egress {
+      from_port        = 0
+      to_port          = 0
+      protocol         = "-1"
+      cidr_blocks      = ["0.0.0.0/0"]
+      ipv6_cidr_blocks = ["::/0"]
+    }
+
+    tags = merge({
+      Name = "EKS ${var.env_name}",
+      "kubernetes.io/cluster/${local.eks_name}": "owned"
+    }, var.tags)
   }
 
-  tags = var.tags
-}
-{% endhighlight %}
+  module "eks" {
+    source = "terraform-aws-modules/eks/aws"
+    version = "18.19.0"
 
+    cluster_name                    = var.eks_name
+    cluster_version                 = "1.21"
+    cluster_endpoint_private_access = true
+    cluster_endpoint_public_access  = true
+    cluster_additional_security_group_ids = [aws_security_group.eks.id]
+
+    vpc_id     = var.vpc_id
+    subnet_ids = var.private_subnet_ids
+
+    eks_managed_node_group_defaults = {
+      ami_type               = "AL2_x86_64"
+      disk_size              = 50
+      instance_types         = ["t3.medium", "t3.large"]
+      vpc_security_group_ids = [aws_security_group.eks.id]
+    }
+
+    eks_managed_node_groups = {
+      green = {
+        min_size     = 1
+        max_size     = 10
+        desired_size = 3
+
+        instance_types = ["t3.medium"]
+        capacity_type  = "SPOT"
+        labels = var.tags 
+        taints = {
+        }
+        tags = var.tags
+      }
+    }
+
+    tags = var.tags
+  }
+```
 
 So there's a lot going on here but lets cover the main points.
 
@@ -96,7 +97,7 @@ This cluster will create a small cluster with spot instances. Now we have everyt
 
 In order to install the load balancer controller you first need to grant access via an IAM role. Fortunatly there is a simple module for this
 
-{% highlight terraform linenos %}
+```terraform
 module "lb_role" {
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
 
@@ -110,13 +111,13 @@ module "lb_role" {
     }
   }
 }
-{% endhighlight %}
+```
 
 This module will add an iam policy to the cluster to allow the creation of load balancers. Remember the `namespace_service_accounts` line, it is assuming you are going to create a service account in the `kube-system` namespace called `aws-load-balancer-controller`. Thats the default location that is used in the documentation. If you need to use a different namespace or service account name then thats fine but remember to update this module.
 
 Fist we need to configure kubernetes and the service account. This service account won't do anything to start with but we need to get it ready for the controller.
 
-```
+```terraform
 provider "kubernetes" {
   host                   = var.cluster_endpoint
   cluster_ca_certificate = base64decode(var.cluster_ca_cert)
@@ -158,7 +159,7 @@ resource "kubernetes_service_account" "service-account" {
 
 To install the actually controller there is a helm chart. To keep all the configuration together we are going to use helm from Terraform.
 
-```
+```terraform
 resource "helm_release" "lb" {
   name       = "aws-load-balancer-controller"
   repository = "https://aws.github.io/eks-charts"
@@ -210,7 +211,7 @@ Below is the ingress configuration for a simple load balancer. This will create 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ .Values.fullname }}-lb
+  name: {% raw %}{{ .Values.fullname }}-lb{% endraw %}
   annotations:
     alb.ingress.kubernetes.io/scheme: internal
     alb.ingress.kubernetes.io/target-type: instance
@@ -221,9 +222,9 @@ spec:
   ingressClassName: alb
   defaultBackend:
     service:
-      name: {{ .Values.fullname }}
+      name: {% raw %}{{ .Values.fullname }}{% endraw %}
       port:
-        number: {{ .Values.service.port }}
+        number: {% raw %}{{ .Values.service.port }}{% endraw %}
 ```
 
 ## Summary
