@@ -15,3 +15,4 @@ My main interest is delivering high quality systems into production and getting 
 The best way to contact me is via my [Linked profile](https://www.linkedin.com/in/andrew-tarry-53a14022/) or [Twitter](https://twitter.com/AndrewTarry3).
 
 ![AWS Developer](/assets/img/Developer-Associate.png)
+![CITP](/assets/img/mbcs-citp-badge-sm.png)
