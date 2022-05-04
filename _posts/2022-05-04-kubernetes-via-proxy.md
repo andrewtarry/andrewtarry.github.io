@@ -59,7 +59,7 @@ clusters:
 - cluster:
     certificate-authority-data: xxxxxxxxx
     server: https://my.dev.server
-		proxy-url: http://internal.proxy.local:1234
+    proxy-url: http://internal.proxy.local:1234
   name: my-dev
 
 ```
