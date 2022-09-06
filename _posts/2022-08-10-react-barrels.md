@@ -7,6 +7,7 @@ categories: [React, UI]
 tags: [React, React Barrel]
 ---
 
+![Barrels](/assets/img/react-barrels/barrels.jpg)
 
 When working on a large React project, it can quickly become difficult to manage the code. You will probably have a components folder that contains all the code but how do you find what you need?
 
