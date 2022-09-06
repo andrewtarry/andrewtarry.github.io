@@ -7,7 +7,7 @@ categories: [AWS, SQS, Redis]
 tags: [AWS, SQS, Redis]
 ---
 
-![Line of penguins](/assets/img/dedup-sqs/penguins.jpg)
+![Line of penguins](/assets/img/dedup-sqs/penguins.png)
 
 One of the hard things with queues like SQS is that you easily add lots of them but knowing what's already there is tricky. The only way to know what's already in the queue is to consume messages, but then you either need to complete them or wait for them to reappear after a timeout. What if you want to prevent duplicate messages from appearing on your queue?
 
