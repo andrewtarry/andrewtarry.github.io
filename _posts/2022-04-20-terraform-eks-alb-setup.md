@@ -13,6 +13,8 @@ Setting up a new Kubernetes cluster is a common task for DevOps Engineer these d
 
 Kubernetes is a complex tool and AWS provide a lot of options to meet almost any need. The problem with that is that it can give you too many options and it can be a little overwhelming. 
 
+{% include ad-top-text.html %}
+
 Here is the module I generally use
 
 ```terraform
@@ -200,6 +202,8 @@ resource "helm_release" "lb" {
   }
 }
 ```
+
+{% include ad-bottom-text.html %}
 
 Here we are deploying a helm chart from Terraform. The important thing to be careful about are the region configuration. Here we are using the AWS EU-West-2 region in London. If you are using a different region you will need to change the region variable but also the `image.repository`. [AWS provide repos in each region](https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html) so if you using another region then make sure you change it.
 

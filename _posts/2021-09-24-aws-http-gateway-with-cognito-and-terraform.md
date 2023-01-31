@@ -15,6 +15,8 @@ With that in mind, I wanted to explore using it with Cognito and Terraform.
 
 First, we will need a Cognito user pool for our users. I am not going to be using Identity Pools in this case, there is no need for them to make the API gateway work, and they are only needed if you want to manage other AWS access using IAM roles.
 
+{% include ad-top-text.html %}
+
 Here is the Terraform for the user pool:
 
 ```
@@ -128,6 +130,8 @@ aws cognito-idp admin-set-user-password \
      --password "${password}" \
      --permanent
 ```
+
+{% include ad-bottom-text.html %}
 
 With a user created, you can log in:
 

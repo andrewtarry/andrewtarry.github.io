@@ -22,6 +22,8 @@ Web based applications are likely to be the common use case people are facing an
 
 While applications are all different but most will follow this basic pattern. If that is what you are doing then why would you ever need anything larger than medium sized instance?
 
+{% include ad-top-text.html %}
+
 The great benefit of hosting an application on AWS is that your application can scale. Amazon offer some great tools to help with this. My favorite approach is Elastic Beanstalk that allows you to host an application, written in a variety of languages or in a Docker container, with auto scaling built in. Most web applications should be able to fit into the Elastic Beanstalk pattern and increase the number of nodes you need when the traffic increases. For more complex applications there is option of AWS Ops Works or Cloud Formation to archive the same effect. In either case there should not be a need to go above a medium instance.
 
 AWS based applications should be able to scale horizontally, meaning that if your application needs more power the solution is more servers rather than bigger servers. The advantage is that you have far greater redundancy in your application and you have the option to scale down when the load reduces.
@@ -36,6 +38,8 @@ Here are just a few questions to ask
 * Am I using the file system when I should be using a database?
 * Does my application do things that should be passed off the a queue for processing later?
 * Is my application too big and should I split it up?
+
+{% include ad-bottom-text.html %}
 
 I'm not suggesting every application can be split up like this, if you are doing some heavy data processing then yes larger instances might be needed but for a web based application it is worth thinking about.
 

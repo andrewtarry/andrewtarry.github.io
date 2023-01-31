@@ -13,6 +13,8 @@ The problem is that it originally only had an old hard disk inside. It wasn’t 
 
 Technically, I could reinstall everything since it’s all managed with Ansible, but that seemed like a bad solution.
 
+{% include ad-top-text.html %}
+
 I am not a Linux Admin, so my approach might not be the best. I pieced this together from blogs, `man` pages, plus some trial and error. It’s not perfect, but it worked for me.
 
 ## Drive Partitions
@@ -191,6 +193,8 @@ This took some time but when it was done I removed the old disk from the LVG.
 ```
 $ vgreduce ubuntu-vg /dev/sdb3
 ```
+
+{% include ad-bottom-text.html %}
 
 Now all the data is on the new SSD or the RAID. My disks look like this
 

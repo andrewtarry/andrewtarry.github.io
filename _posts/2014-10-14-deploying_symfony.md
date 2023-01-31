@@ -13,6 +13,8 @@ Since Heroku started supporting PHP it has become a valuable hosting option for 
 
 There is some good documentation available on running [PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-PHP#introduction) so I don't intend on repeating that here. I will assume you have followed the steps in the introduction and you have your app that you want to deploy.
 
+{% include ad-top-text.html %}
+
 ### Setting your dependencies
 
 Heroku uses composer not only to install your PHP dependencies but also to set up your PHP version and extensions. Normally composer would just give you an error if the extensions or version does not match the system but Heroku will actually install them for you. This is great because you can really customise the environment but you need to be careful about actually listing the dependencies on your system. 
@@ -92,6 +94,8 @@ Alternative is host the database seperatly with something like AWS RDS. This mig
 ### Package.json
 
 When I build Symfony 2 apps I normally like to build my frontend assets with Grunt rather than assetic. The result is that I will normally have a `package.json` file in the root of my application to handle my node modules. This can confuse the Heroku build system because it will think you have a node.js application and configure the environment for that. The result is that you will get a lot of 500's from your application.
+
+{% include ad-bottom-text.html %}
 
 To solve this problem you need to tell Heroku to use the PHP build system rather than the node.js one. To do this you can run this command from the root of the project.
 

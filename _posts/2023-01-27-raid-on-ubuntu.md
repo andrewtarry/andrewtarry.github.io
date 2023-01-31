@@ -15,6 +15,8 @@ My homelab does a wide range of things. It is a media server for the kids to wat
 
 In my original homelab setup I had a 500Gb HDD that contained the operating system and all my data. I have [migrated the operating system](https://andrewtarry.com/posts/migrating-linux-to-a-new-disk) to a new SSD so I now need to plan for the rest of my data. At the time of the migration, there was around 400Gb of data, and I knew I had a few Terrabytes to come. I also wanted to protect the data, disks fail, and if I lost everything, it would take a long time to recover.
 
+{% include ad-top-text.html %}
+
 I decided to upgrade my storage with some new Hard Drives that I would configure in RAID 1. The reason for RAID 1 is that it gives me a redundant copy of the data, and it will improve the read time. I would have liked to go for something like RAID 5 so I could keep expanding as needed but the case would only fit 2 HDDs. I could have added a separate NAS, but that would have pushed the cost up too much, I probably will get a NAS eventually but for now I will add 2 disks.
 
 ## Set Up 
@@ -76,6 +78,8 @@ Next, I updated the `initramfs` so that the RAID would start early in the boot p
 ```
 $ sudo update-initramfs -u 
 ```
+
+{% include ad-bottom-text.html %}
 
 Finally I added this line to my `/etc/fstab` file:
 

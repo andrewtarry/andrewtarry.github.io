@@ -15,6 +15,8 @@ A simple solution to this problem is to only allow Jenkins to handle this merge.
 
 I assume you have Jenkins installed and the git plugin enabled. To add the merge you need to find the `Additional Behaviours` section under `Source Code Management` and open the `Add` drop down. Select `Merge before build` and an additional section will be added to the form.
 
+{% include ad-top-text.html %}
+
 ![Jenkins source control during a merge](/assets/img/jenkins/jenkins_merge.png)
 
 Here I am merging the `develop` branch into `master` before I run my tests. If there are any merge conflicts the test will fail, which is likely to be what you want because you should fix the conflict before merging to a stable branch.

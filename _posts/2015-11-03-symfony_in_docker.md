@@ -12,6 +12,8 @@ Docker provides an extremely flexible way to package and deploy a Symfony 2 appl
 
 Getting Docker installed depends your environment, Linux users can run Docker natively but Mac or Windows users will need to install docker-machine. All of the installation instructions for your environment can be found on the [Docker Website](https://docs.docker.com/installation/).
 
+{% include ad-top-text.html %}
+
 ## Configuring your application
 
 To get started with Docker you first need to add a `Dockerfile` to the root of your application.
@@ -85,6 +87,8 @@ DirectoryIndex app.php
 ```
 
 This is a basic Apache 2 configuration file that will be added to the container.
+
+{% include ad-bottom-text.html %}
 
 ## Adding your application
 

@@ -15,6 +15,8 @@ Chef and Berkshelf
 
 Vagrant offers a number of provisioning tools that we could use and over the years I have worked with most of them. I think Chef is one of the easiest to use for managing a development environment because it offers such a rich set of libraries for us to use. The code is written in Ruby so as long as you have a basic grasp of the syntax you should be able write some simple Chef recipes for your environment.
 
+{% include ad-top-text.html %}
+
 The feature of Chef that makes it a real winner for me is it's dependency management system [Berkshelf](http://berkshelf.com/). As a developer I don't want to spend a long time customising my environment, I want to use as many open source libraries as I can to speed up the process and let me focus on my work. Fortunately Chef has a fantastic selection of open source recipes for you to choose from. The main source is the [Chef Supermarket](https://supermarket.chef.io/) where you can find a recipe for most common tasks and, thanks to Berkshelf installing, them really easy.
 
 The setup
@@ -90,6 +92,9 @@ Vagrant.configure(2) do |config|
   end
 end
 ```
+
+{% include ad-bottom-text.html %}
+
 I have set the location of the Berksfile because I want use the one in my recipe.
 
 The final step is to run `vagrant up` and you should see Chef running on your VM. Once it is complete you can do `vagrant ssh` and `php -v` to see that PHP has been installed by Chef.

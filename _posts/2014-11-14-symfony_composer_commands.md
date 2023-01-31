@@ -15,6 +15,8 @@ As of Symfony 2.5 there are 5 commands in the default composer.json and most of 
 
 The `ScriptHandler::buildBootstrap` command is required to build the `app/bootstrap.php.cache` file. The bootstrap file is neccissary for Symfony to correctly start. It is generated for you and the best thing to do is leave it alone to do it's job.
 
+{% include ad-top-text.html %}
+
 ## clearCache
 
 The clear cache command will simply run `app/console cache:clear`, possibly with the `--no-warmup` flag depending on your configuration. This can be useful to make sure your cache is not referencing out of date dependencies. If you remove this line from the composer.json your application will still work but remember to clear the cache manually.
@@ -30,6 +32,8 @@ The install requirements file is there to create the `web/config.php` command an
 ## removeSymfonyStandardFiles
 
 This command removes the `app/SymfonyStandard` directory if it exists. This command is only relevent in some installation scearios and can be safely removed.
+
+{% include ad-bottom-text.html %}
 
 ## Incenteev\\ParameterHandler\\ScriptHandler::buildParameters
 

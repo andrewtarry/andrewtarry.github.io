@@ -21,6 +21,8 @@ In the examples below I want to show how we can deserialize a simple json body i
 }
 ```
 
+{% include ad-top-text.html %}
+
 Our target POJO looks like this:
 
 ```java
@@ -156,6 +158,8 @@ public class MyInterfaceDeserialize extends StdDeserializer<MyInterface> {
     }
 }
 ```
+
+{% include ad-bottom-text.html %}
 
 We need to register this deserializer with Jackson.
 

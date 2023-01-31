@@ -17,6 +17,8 @@ First let's cover what each component does in this application. In this tutorial
 * **[Ribbon](https://github.com/Netflix/ribbon)** - Load balancing, fault tolerant HTTP client
 * **[Hystrix](https://github.com/Netflix/Hystrix)** - Latency and fault tolerance library that will provide a circuit breaker to help with external failures.
 
+{% include ad-top-text.html %}
+
 Lets imagine we need to build an application that has to interact with a list of products from another application. The list of products is managed by another team (or maybe another company) so don't know anything about how it works and can't change it. Here's a simplified json body on what to expect. 
 
 ```json
@@ -190,6 +192,8 @@ feign:
   hystrix:
     enabled: true
 ```
+
+{% include ad-bottom-text.html %}
 
 The configuration has firstly disabled Eureka, this should be option but if Eureka is on the classpath it will interfere with ribbon configuration so its best to be explicit.
 

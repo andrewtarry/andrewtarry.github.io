@@ -11,6 +11,8 @@ tags: [AWS, SQS, Redis]
 
 One of the hard things with queues like SQS is that you easily add lots of them but knowing what's already there is tricky. The only way to know what's already in the queue is to consume messages, but then you either need to complete them or wait for them to reappear after a timeout. What if you want to prevent duplicate messages from appearing on your queue?
 
+{% include ad-top-text.html %}
+
 ## Why should you de-duplicate your queue?
 
 Good question and the answer might be that you don’t need to. The first question is, what happens if you have a duplicate? Ideally, the system should handle that gracefully. That might be fine if you are writing data and overwriting the same data twice. If your consuming application sees a duplicate order number and ignores it, great. 
@@ -38,6 +40,8 @@ Once you have a key, you need a store to hold the ones you have written to the q
 ![logic diagram](/assets/img/dedup-sqs/process.png)
 
 The great thing about Redis is that you can set a time to live for the ID. Maybe you only want to avoid duplicates for an hour or that ID will never be seen again but you don’t need to keep it forever.
+
+{% include ad-bottom-text.html %}
 
 This approach adds a fast, distributed data store to handle the IDs and it will prevent duplicates from hitting the queue. It’s not perfect since there are still race conditions that will let duplicate in, but it will cover most of them. 
 

@@ -13,6 +13,8 @@ When working on a large React project, it can quickly become difficult to manage
 
 To make life easier your can structure your code using folders. Then Barrels is an approach to make it easier to import your code throughout your project.
 
+{% include ad-top-text.html %}
+
 ## Problem Code
 
 Image you have a code case base that looks something like this:
@@ -123,6 +125,8 @@ This allows us to decouple the exports from the file names. You could only expor
 ### What not put the component in an index.tsx?
 
 Yes you could do that but don't. The problem is as you open more and more files in your editor you will find they are all called `index.tsx` it's going to get confusing. Naming them to match the component will make file easier.
+
+{% include ad-bottom-text.html %}
 
 ### Whats in the `components/index.ts`?
 

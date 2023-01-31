@@ -17,6 +17,8 @@ One of the common arrangements is when the CI server sits somewhere different fr
 
 This proxy usually is doing things like rewriting URLs, managing security or just logging requests, but it's your only route to get the job done.
 
+{% include ad-top-text.html %}
+
 I certainly don't recommend this setup, but it remains common with many legacy organisations. The problem is that you now need `kubectl` and other related tools to understand and respect your proxy.
 
 ## Managing kubernetes requests
@@ -51,6 +53,8 @@ users:
 ```
 
 This style of yaml file will be familiar to most people using Kubernetes. If you have more servers and contexts in place, your file will be a lot larger but you will still have the `clusters`, `contexts` and `users`  objects.
+
+{% include ad-bottom-text.html %}
 
 To set a proxy you can modify the cluster object as follows:
 

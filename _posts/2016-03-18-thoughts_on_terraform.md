@@ -15,6 +15,8 @@ Terraform does support a lot more providers that AWS but I've not tried them so 
 
 First things first, Terraform is extremely powerful and much easier to work with than manually setting things up in the AWS UI or Cloudformation. It's syntax is clear enough that you can understand it without too much work and it's declarative so your environment should never get out of sync.
 
+{% include ad-top-text.html %}
+
 I was really impressed with how easily I could create an auto-scaling web application. Getting the first version of your app running takes a lot of code to add a VPC, subnets, security groups, launch configuration, auto scaling, elastic load balancer, route 53 records and anything else you need but that's a lot of things you're creating. Once that first app is up and running you can add more or create multiple environments so easily. I'm not going to give a long code example here, [Hashicorp has some good ones](https://github.com/hashicorp/terraform/tree/master/examples/aws-two-tier).
 
 Considering how long it normally takes to create a large scale environment manually I think Terraform is going to greatly relive the DevOps world. A few well made Terraform files and you can manage that environment easily.
@@ -72,6 +74,8 @@ The problem with the declarative approach is that once you run the plan you cann
 Ok, this is just an annoyance rather than real problem but there are a number of resources missing from some of the major providers. Terraform have some really good documentation to add your own providers and there are number of new ones being reviewed at the moment but it's still a problem when the thing you need isn't there. Adding new providers is not for everyone, you will need Go developers or people with the time to learn it so if you're not in the Go world adding a new resource might not be realistic. This problem is likely to arise when you want to add that great new feature to your environment but then you see there's no support for it when you would expect it to be there. 
 
 These things take time and I don't want to sound like I don't appreciate the work of the Terraform developers because I do and I'm honestly amazed they manage to support so much without an enormous team. I think they've done a great job and hope they continue adding new features but when it comes to the provisioning your environment you need to take that into account. Are there a lot of new features on the roadmap? What will they need? Is there support of them?
+
+{% include ad-bottom-text.html %}
 
 ### Changes between versions
 

@@ -12,6 +12,8 @@ I've talked about [docker before](/symfony_in_docker) and I think it makes an ex
 
 One of the best tools in the docker ecosystem is [docker compose](https://docs.docker.com/compose/overview/). Back in the day it was originally named `fig` before it moved into docker world and renamed as docker compose. Many versions later it is a mature and useful tool for building you development environment. 
 
+{% include ad-top-text.html %}
+
 ## Docker Compose yaml
 
 Docker compose uses a configuration file which is, logically, called `docker-compose.yml`. 
@@ -88,6 +90,8 @@ networks:
   mynetwork:
     driver: bridge
 ```
+
+{% include ad-bottom-text.html %}
 
 Now we have a new network creatively called `mynetwork` but it could be called anything. We're using the docker standard bridge network so it behaves in the way we are all used to with docker. The difference is that now the redis container has a real domain and the database has 2. Our application does not need to know it's running in development because all the domains are the same.
 

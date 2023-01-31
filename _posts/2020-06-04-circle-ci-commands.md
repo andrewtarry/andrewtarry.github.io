@@ -13,6 +13,8 @@ Cricle CI now as the option to create reusable steps in your pipeline that act a
 
 Commands are a great feature that seem to be a bit buried in the rest of the [documentation](https://circleci.com/docs/2.0/configuration-reference/#commands-requires-version-21). Here I will try to talk about them in some more detail.
 
+{% include ad-top-text.html %}
+
 ## The problem that this solves
 
 Commands are particularly useful when used which a monorepo. A [monorepo]((https://www.perforce.com/blog/vcs/what-monorepo)) is a practice for development teams to keep all their code together in a single git repo. When designing a CI pipeline for a monorepo we often need to deal with each directory separately. 
@@ -212,6 +214,8 @@ jobs:
             directory: project2
 
 ```
+
+{% include ad-bottom-text.html %}
 
 Now we have all the steps to checkout the code, configure the cache and dependencies as well as test in a single command. Command parameters make it act more like a function with input that make it reusable throughout the pipeline. In addition there is the option for commands to use Circle CI bespoke keys and even other commands. 
 
