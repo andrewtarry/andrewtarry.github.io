@@ -62,6 +62,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 
 Next using `fdisk` I reproduced the 3 partitions. I kept partitions 1 and 2 the same size as the old disk and used the rest of the space for partition 3.
 
+
 ```
 $ fdisk /dev/sda
 
@@ -111,7 +112,9 @@ Help:
    s   create a new empty Sun partition table 
 ```
 
+
 Once I was done the disks looked like this:
+
 
 ```
 $ fdisk -l
@@ -142,6 +145,7 @@ Device     Boot   Start       End   Sectors   Size Id Type
 /dev/sda2          4096   4198399   4194304     2G 83 Linux
 /dev/sda3       4198400 234455039 230256640 109.8G 83 Linux
 ```
+
 
 ## Boot Partition
 
