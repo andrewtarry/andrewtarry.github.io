@@ -69,7 +69,7 @@ theme_mode: dual
 # boolean type, global switch for ToC in posts.
 toc: true
 
-paginate: 5
+paginate: 8
 
 markdown: kramdown
 
