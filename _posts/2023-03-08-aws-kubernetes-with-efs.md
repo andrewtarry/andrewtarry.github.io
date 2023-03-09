@@ -7,6 +7,8 @@ categories: [DevOps, AWS, Terraform, EKS, Kubernetes, EFS]
 tags: [aws, terraform, kubernetes, eks]
 ---
 
+![EKS EFS Diagram](/assets/img/aws-efs/EKS_EFS_diagram.png)
+
 Using AWS EKS is great for large-scale services but what happens when you need a shared filesystem? Some applications need to share a filesystem to work properly so you need to set up some volumes. If you only need one node to be able to use a volume at once then an EBS is ideal. For more complex needs with lots of reads and writes from different nodes you need EFS.
 
 ## What is EFS
