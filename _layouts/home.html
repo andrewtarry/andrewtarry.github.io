@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Recent Software Devleopment Posts
 # The Home page layout
 # v2.0
 # https://github.com/cotes2020/jekyll-theme-chirpy
@@ -8,11 +9,12 @@ layout: page
 ---
 
 <div id="post-list">
+  <h1>Recent Software Development Posts</h1>
   {% for post in paginator.posts %}
   <div class="post-preview">
-    <h1>
+    <h2>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </h1>
+    </h2>
     <div class="post-content">
       <p>
       {% assign _content = post.content %}

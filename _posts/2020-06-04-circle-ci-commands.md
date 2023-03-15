@@ -17,7 +17,7 @@ Commands are a great feature that seem to be a bit buried in the rest of the [do
 
 ## The problem that this solves
 
-Commands are particularly useful when used which a monorepo. A [monorepo]((https://www.perforce.com/blog/vcs/what-monorepo)) is a practice for development teams to keep all their code together in a single git repo. When designing a CI pipeline for a monorepo we often need to deal with each directory separately. 
+Commands are particularly useful when used which a monorepo. A [monorepo](https://www.perforce.com/blog/vcs/what-monorepo) is a practice for development teams to keep all their code together in a single git repo. When designing a CI pipeline for a monorepo we often need to deal with each directory separately. 
 
 Imagine a Circle CI workflow like this:
 
