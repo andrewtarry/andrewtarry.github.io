@@ -5,6 +5,7 @@ description: Developing shared libaries with ts-node requires custom configurati
 date: 2023-03-09 01:10:00 +0000
 categories: [Typescript]
 tags: [ts-node, ts, typescript]
+og_image: /assets/img/ts-node-paths/400w/node-paths.png
 ---
 
 ![Paths image](/assets/img/ts-node-paths/400w/node-paths.png)

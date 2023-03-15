@@ -16,8 +16,16 @@
   {%- endunless -%}
     {{ site.title }}
   </title>
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:type" content="{{ include.page_type }}" />
+  <meta property="og:url" content="{{ site.url}}{{ page.url }}" />
+  <meta property="og:locale" content="en_GB" />
 
-  {% seo title=false %}
+
+  {% if include.og_image != nil %}
+  <meta property="og:image" content="{{ site.url }}{{ include.og_image }}" />
+  {% endif %}
 
   {% include favicons.html %}
 

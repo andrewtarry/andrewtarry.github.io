@@ -5,6 +5,7 @@ description: Use Terraform to deploy a new AWS Elastic Kubernetes Cluster with t
 date: 2023-03-08 01:10:00 +0000
 categories: [DevOps, AWS, Terraform, EKS, Kubernetes, EFS]
 tags: [aws, terraform, kubernetes, eks]
+og_image: /assets/img/aws-efs/EKS_EFS_diagram.png
 ---
 
 ![EKS EFS Diagram](/assets/img/aws-efs/EKS_EFS_diagram.png)

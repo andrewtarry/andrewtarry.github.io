@@ -1,5 +1,6 @@
 ---
 layout: compress
+page_type: website
 # Default layout
 # v2.0
 # https://github.com/cotes2020/jekyll-theme-chirpy
@@ -23,7 +24,10 @@ layout: compress
 
 <html lang="{{ lang }}" {{ prefer_mode }} >
 
-  {% include head.html %}
+  {% assign pagetype = layout.page_type %}
+  {% assign ogImg = page.og_image | default: nil %}
+  {% include head.html page_type=pagetype og_image=ogImg %}
+
 
   <body data-spy="scroll" data-target="#toc">
 

@@ -5,6 +5,7 @@ description: Plex and other media servers allow you store your films and have a 
 date: 2023-02-22 01:10:00 +0000
 categories: [MakeMKV, Docker]
 tags: [MakeMKV, Plex, Docker ]
+og_image: /assets/img/makemkv/makemkv.png
 ---
 
 I have a large media library of DVD’s and Blu-Ray films that I have been adding to my Plex server. We have several TV’s around the house and it’s just easier than having to hunt around the house for the film I want to watch. 

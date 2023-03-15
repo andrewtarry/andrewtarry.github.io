@@ -4,7 +4,7 @@ title: Setting up EKS with Terraform, Helm and a Load balancer
 description: Use Terraform to deploy a new AWS Elastic Kubernetes Cluster with a Helm chart and Application Load Balancer
 date: 2022-04-20 01:10:00 +0000
 categories: [DevOps, AWS, Terraform, EKS, Kubernetes]
-tags: [aws, terraform, kubernetes, eks]
+tags: [aws, terraform, kubernetes, eks, docker]
 ---
 
 Setting up a new Kubernetes cluster is a common task for DevOps Engineer these days and in the past few months I've had a set up several. These have normally been on AWS using the Elastic Kubernetes Service and Terraform. In this article I want to share my approach to setting up a new cluster and installing the ALB addon to actually allow traffic to your applications. To allow traffic into our cluster we need to link our Kubernetes ingress to an AWS Load Balancer user the ALB Controller.

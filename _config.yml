@@ -13,7 +13,7 @@ title: Andrew Tarry                          # the main title
 tagline: Boring thoughts about software development  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Modern software development is moving faster than ever. AWS, Kubernetes, DevOps, Java, JavaScript and AI are hard to track. Here are some friendly tutorials for everyone
+  Modern software development is moving fast. AWS, Kubernetes, DevOps, Java, JavaScript and AI are hard to track. Here are some friendly tutorials for everyone
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://andrewtarry.com'

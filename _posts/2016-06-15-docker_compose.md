@@ -1,14 +1,14 @@
 ---
 layout: post
 title: Using hostnames in docker compose
-description: Using hostnames in docker compose
+description: Using hostnames in docker compose to make internal routing easier in your development environment
 date: 2016-06-15 14:10:00 +0000
 categories: [Docker]
 tags: [docker, docker compose]
 ---
 
 
-I've talked about [docker before](/symfony_in_docker) and I think it makes an extremely powerful part of the development toolchain. It gives you the ability to run a docker container locally and then deploy that same container to production. That's all well and good but production has things other than just your app, it's got a database, maybe a redis cache, perhaps some other internal services to talk to. So how do you replicate all of this in production?
+I've talked about [Docker before](/posts/symfony_in_docker/) and I think it makes an extremely powerful part of the development toolchain. It gives you the ability to run a docker container locally and then deploy that same container to production. That's all well and good but production has things other than just your app, it's got a database, maybe a redis cache, perhaps some other internal services to talk to. So how do you replicate all of this in production?
 
 One of the best tools in the docker ecosystem is [docker compose](https://docs.docker.com/compose/overview/). Back in the day it was originally named `fig` before it moved into docker world and renamed as docker compose. Many versions later it is a mature and useful tool for building you development environment. 
 
