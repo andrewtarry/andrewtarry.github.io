@@ -5,7 +5,10 @@ description: Running Jenkins in Kubernetes add some complexity when using Docker
 date: 2023-02-17 01:10:00 +0000
 categories: [Kubernetes, Docker, Jenkins]
 tags: [Kubernetes, Docker, Jenkins]
+og_image: /assets/img/jenkins/jenkins-kube-docker.png
 ---
+
+![Jenkins Kubernetes and Docker](/assets/img/jenkins/jenkins-kube-docker.png)
 
 I was recently trying to build Docker images with Jenkins. That sounds easy, but Jenkins was running on Kubernetes and so it was already in a container. To make things harder, I needed to then push the images into a private registry with a custom certificate.
 

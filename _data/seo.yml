@@ -1,0 +1,5 @@
+categories:
+  - name: kubernetes.html
+    description: Kubernetes has taken over the DevOps space, and if you are running a platform today without it, then its time to learn
+  - name: apache.html
+    description: Apache HTTP Server is one of the most well used and powerful webservers on the market that you need to know about

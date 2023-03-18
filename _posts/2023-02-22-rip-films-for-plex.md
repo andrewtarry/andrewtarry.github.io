@@ -4,7 +4,7 @@ title: How I rip film for Plex
 description: Plex and other media servers allow you store your films and have a personal media libaray. The challenge is getting the films into the library to start with
 date: 2023-02-22 01:10:00 +0000
 categories: [MakeMKV, Docker]
-tags: [MakeMKV, Plex, Docker ]
+tags: [MakeMKV, Plex, Docker]
 og_image: /assets/img/makemkv/makemkv.png
 ---
 
