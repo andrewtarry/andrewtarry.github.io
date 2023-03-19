@@ -24,10 +24,12 @@ page_type: website
 
 <html lang="{{ lang }}" {{ prefer_mode }} >
 
+  <head>
   {% assign pagetype = layout.page_type %}
   {% assign ogImg = page.og_image | default: nil %}
-  {% include head.html page_type=pagetype og_image=ogImg %}
+  {% include head.html page_type=pagetype og_image=ogImg dir=page.dir %}
 
+  </head>
 
   <body data-spy="scroll" data-target="#toc">
 

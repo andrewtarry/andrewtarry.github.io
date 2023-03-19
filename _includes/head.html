@@ -6,7 +6,6 @@
   MIT License
 -->
 
-<head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,8 +15,21 @@
   {%- endunless -%}
     {{ site.title }}
   </title>
+
+  {% assign description = page.description %}
+  {%- if description == "" or description == nil -%}
+    {% for seo in site.data['seo']['categories'] %}
+      {%- if seo['name'] == include.dir %}
+        {%- assign description = seo['description'] -%}
+      {%- endif -%}
+    {% endfor %}
+  {%- endif -%}
+
+  <meta name="description" content="{{ description }}">
+  <meta name="keywords" content="{{ page.tags | join: ", " }}">
+  <meta name="author" content="Andrew Tarry">
   <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:description" content="{{ page.description }}" />
+  <meta property="og:description" content="{{ description }}" />
   <meta property="og:type" content="{{ include.page_type }}" />
   <meta property="og:url" content="{{ site.url}}{{ page.url }}" />
   <meta property="og:locale" content="en_GB" />
@@ -73,5 +85,3 @@
      crossorigin="anonymous"></script>
 
   {% include js-selector.html %}
-
-</head>
