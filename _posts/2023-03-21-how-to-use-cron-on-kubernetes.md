@@ -14,6 +14,8 @@ Cron is one of those simple tools that it’s hard to imagine life without. It a
 
 With cron, it is simply a case of adding a like to the `crontab` and you’re done. What is the best way to run a cron job inside a Kubernetes cluster?
 
+{% include ad-top-text.html %}
+
 ## Cron and Kubernetes Scenario
 
 Let's imagine you need to run a script that reconciles two databases every 2 hours. The script is called `reconcile.sh`.
@@ -72,6 +74,8 @@ spec:
 ```
 
 This approach means that you do not need to include cron in your container since Kubernetes will manage that. You can use all the normal Kubernetes configuration values like Environment Variables, Secrets, Volumes and ConfigMaps.
+
+{% include ad-bottom-text.html %}
 
 The `schedule` uses the standard crontab structure. You can run a task every minute, every hour or every week, depending on your needs. If you are unsure about the Cron schedule, use [crontab guru](https://crontab.guru/) to generate the cron expression. 
 

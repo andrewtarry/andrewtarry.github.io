@@ -5,3 +5,5 @@ categories:
     description: Apache HTTP Server is one of the most well used and powerful webservers on the market that you need to know about
   - name: /categories/aws/
     description: Amazon Web Services is the leading provider of cloud computing on the market. Its services allow anyone access to the power and convenience of cloud computing
+  - name: /categories/jenkins/
+    description: Jenkins remains one of the most commonly used tools for developers worldwide. The free, continuous integration platform is powerful and flexible

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How I rip film for Plex
+title: How I rip films for Plex
 description: Plex and other media servers allow you store your films and have a personal media libaray. The challenge is getting the films into the library to start with
 date: 2023-02-22 01:10:00 +0000
 categories: [MakeMKV, Docker]
@@ -56,4 +56,4 @@ The copying process takes a while but I can leave it while it runs and because i
 
 Once it finishes you will have a new `.mkv` file of your film. You could add this plex but `.mkv` is a bit of an odd format. It’s very big, and you will normally need to transcode it. Plex and other media servers can often perform live transcoding, but they will place a lot of strain on the server. If you only have a small server or a NAS that’s not ideal. 
 
-In the next article, I will share my transcoding scripts.
+In the next article, I will share [my transcoding process using HandBrake](/posts/how-to-use-handbrake-to-transcode-films-for-plex).

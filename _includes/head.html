@@ -25,6 +25,11 @@
     {% endfor %}
   {%- endif -%}
 
+
+  {%- if description == "" or description == nil -%}
+    {%- assign description = site.description -%}
+  {%- endif -%}
+
   <meta name="description" content="{{ description }}">
   <meta name="keywords" content="{{ page.tags | join: ", " }}">
   <meta name="author" content="Andrew Tarry">

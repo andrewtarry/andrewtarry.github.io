@@ -4,7 +4,7 @@ title: Setting up AWS EKS using EFS with Terraform
 description: Use Terraform to deploy a new AWS Elastic Kubernetes Cluster with the Elastic File System to provide volumes
 date: 2023-03-08 01:10:00 +0000
 categories: [DevOps, AWS, Terraform, EKS, Kubernetes, EFS]
-tags: [aws, terraform, kubernetes, eks]
+tags: [AWS, Terraform, Kubernetes, EKS]
 og_image: /assets/img/aws-efs/EKS_EFS_diagram.png
 ---
 

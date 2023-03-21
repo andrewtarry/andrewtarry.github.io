@@ -4,7 +4,7 @@ title: Why developers dislike Jenkins in 2023 (and why it’s a bit unfair)
 description: Jenkins is one of the most popular Continuous integration tools out there, but it gets much criticism from developers. What’s wrong with it, and is that fair? 
 date: 2023-03-15 01:10:00 +0000
 categories: [Jenkins]
-tags: [jenkins]
+tags: [Jenkins]
 og_image: /assets/img/jenkins/jenkins_logo.png
 ---
 
