@@ -3,3 +3,5 @@ categories:
     description: Kubernetes has taken over the DevOps space, and if you are running a platform today without it, then its time to learn
   - name: /categories/apache/
     description: Apache HTTP Server is one of the most well used and powerful webservers on the market that you need to know about
+  - name: /categories/aws/
+    description: Amazon Web Services is the leading provider of cloud computing on the market. Its services allow anyone access to the power and convenience of cloud computing
