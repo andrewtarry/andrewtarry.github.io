@@ -5,7 +5,10 @@ description: Symfony can be run in a Docker container to give you a really light
 date: 2015-11-03 14:10:00 +0000
 categories: [Docker, Symfony]
 tags: [docker, symfony]
+og_image: /assets/img/docker-sf/docker-sf.png
+image: /assets/img/docker-sf/docker-sf.png
 ---
+
 Docker provides an extremely flexible way to package and deploy a Symfony 2 application. This guide will help you get an application running in a container so it can be deployed to any environment that supports Docker.
 
 ## Installing Docker

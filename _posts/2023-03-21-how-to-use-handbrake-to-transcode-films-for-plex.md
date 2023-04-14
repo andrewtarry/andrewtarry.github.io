@@ -6,9 +6,8 @@ date: 2023-03-21 17:10:00 +0000
 categories: [MakeMKV, Plex, Handbrake]
 tags: [MakeMKV, Plex, Handbrake]
 og_image: /assets/img/handbrake/handbrake-logo.png
+image: /assets/img/handbrake/handbrake-logo.png
 ---
-
-![Handbrake](/assets/img/handbrake/handbrake-logo.png)
 
 In my previous article, I discussed how I [rip content from DVDs and Blu-ray for my home media server](https://andrewtarry.com/posts/rip-films-for-plex/). I use MakeMKV for that and the output is a rather large `.mkv` file. In this article, I will cover how to convert this into a `.mp4` file and add it to Plex.
 
