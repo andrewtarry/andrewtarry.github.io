@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How to write a helm test
+title: How to write a Helm Test
 description: Helm tests are a built-in feature that allows you to create and run tests for your Helm charts. These tests are essential for validating the functionality and performance of your applications
 date: 2023-04-20 04:10:00 +0000
 categories: [Bid, Project Management]
