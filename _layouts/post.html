@@ -65,7 +65,7 @@ page_type: article
 
       <div class="post-content">
         {% if page.image %}
-          <img src="{{ page.image }}">
+          <img src="{{ page.image }}" alt="{{ page.title }}">
         {% endif %}
         <!-- Using lozad. See: <https://github.com/ApoorvSaxena/lozad.js#usage> -->
         {% if content contains '<img src=' %}

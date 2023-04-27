@@ -1,4 +1,10 @@
 -
+  filename: 'how-to-write-helm-tests'
+  lastmod: '2023-04-20 10:34:53 +0300'
+-
+  filename: 'how-to-use-handbrake-to-transcode-films-for-plex'
+  lastmod: '2023-04-14 08:29:53 +0300'
+-
   filename: 'how-to-use-cron-on-kubernetes'
   lastmod: '2023-03-21 20:08:57 +0200'
 -
@@ -57,7 +63,7 @@
   lastmod: '2023-01-31 11:22:42 +0200'
 -
   filename: 'symfony_in_docker'
-  lastmod: '2023-01-31 11:22:42 +0200'
+  lastmod: '2023-04-14 08:29:53 +0300'
 -
   filename: 'enkins_git_merges'
   lastmod: '2023-01-31 11:22:42 +0200'
