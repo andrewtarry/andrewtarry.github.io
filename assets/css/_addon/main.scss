@@ -119,6 +119,7 @@ $sidebar-display: "sidebar-display";
   }
   .nav-item {
     height: $tab-height;
+    width: 100%;
     &:hover {
       .nav-link {
         color: #f8f9facf;

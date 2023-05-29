@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Setting up EKS with Terraform, Helm and a Load balancer
+title: Setting up EKS with Terraform, Helm and a Load balancer (Updated for 2023)
 description: Use Terraform to deploy a new AWS Elastic Kubernetes Cluster with a Helm chart and Application Load Balancer
-date: 2022-04-20 01:10:00 +0000
+date: 2023-05-29 01:10:00 +0000
 categories: [DevOps, AWS, Terraform, EKS, Kubernetes]
 tags: [aws, terraform, kubernetes, eks, docker, devops]
 ---
 
-> An [updated EKS article](https://andrewtarry.com/posts/terraform-eks-alb-setup-updated/) has been posted with new versions of the modules.
+> This [EKS article](https://andrewtarry.com/posts/terraform-eks-alb-setup/) was originally posted in early 2022. The Terraform modules have been updated since then so here is a up to date version.
 
 Setting up a new Kubernetes cluster is a common task for DevOps Engineer these days and in the past few months I've had a set up several. These have normally been on AWS using the Elastic Kubernetes Service and Terraform. In this article I want to share my approach to setting up a new cluster and installing the ALB addon to actually allow traffic to your applications. To allow traffic into our cluster we need to link our Kubernetes ingress to an AWS Load Balancer user the ALB Controller.
 
@@ -20,53 +20,54 @@ Kubernetes is a complex tool and AWS provide a lot of options to meet almost any
 Here is the module I generally use
 
 ```terraform
-  resource "aws_security_group" "eks" {
-    name        = "${var.env_name} eks cluster"
-    description = "Allow traffic"
-    vpc_id      = var.vpc_id
-
-    ingress {
-      description      = "World"
-      from_port        = 0
-      to_port          = 0
-      protocol         = "-1"
-      cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = ["::/0"]
-    }
-
-    egress {
-      from_port        = 0
-      to_port          = 0
-      protocol         = "-1"
-      cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = ["::/0"]
-    }
-
-    tags = merge({
-      Name = "EKS ${var.env_name}",
-      "kubernetes.io/cluster/${local.eks_name}": "owned"
-    }, var.tags)
-  }
-
   module "eks" {
     source = "terraform-aws-modules/eks/aws"
-    version = "18.19.0"
+    version = "19.5.1"
 
     cluster_name                    = var.eks_name
     cluster_version                 = "1.21"
     cluster_endpoint_private_access = true
     cluster_endpoint_public_access  = true
-    cluster_additional_security_group_ids = [aws_security_group.eks.id]
 
     vpc_id     = var.vpc_id
     subnet_ids = var.private_subnet_ids
 
     eks_managed_node_group_defaults = {
       ami_type               = "AL2_x86_64"
+      cluster_additional_security_group_ids = [aws_security_group.eks.id]
       disk_size              = 50
       instance_types         = ["t3.medium", "t3.large"]
       vpc_security_group_ids = [aws_security_group.eks.id]
     }
+
+ cluster_security_group_additional_rules = {
+    ingress_nodes_ephemeral_ports_tcp = {
+      description                = "Nodes on ephemeral ports"
+      protocol                   = "tcp"
+      from_port                  = 1025
+      to_port                    = 65535
+      type                       = "ingress"
+      source_node_security_group = true
+    }
+  }
+  node_security_group_additional_rules = {
+    ingress_self_all = {
+      description = "Node to node all ports/protocols"
+      protocol    = "-1"
+      from_port   = 0
+      to_port     = 0
+      type        = "ingress"
+      self        = true
+    }
+    egress_self_all = {
+      description = "Node to node all ports/protocols"
+      protocol    = "-1"
+      from_port   = 0
+      to_port     = 0
+      type        = "egress"
+      self        = true
+    }
+  }
 
     eks_managed_node_groups = {
       green = {
@@ -90,8 +91,9 @@ Here is the module I generally use
 So there's a lot going on here but lets cover the main points.
 
 1. First we have a security group to open up the cluster. This cluster will run in a private subnet of a VPC so we are not actaully opening this to the world. Despite this I would suggest restricting the security group but for these purposes we will use this open group.
-1. Next we have the eks module. For this we're pulling in an open source module that will do most of the work for us. 
-1. At the top we define various cluster properties like the name, endpoint details and security groups. 
+1. Fisst we have the eks module. For this we're pulling in an open source module that will do most of the work for us. 
+1. At the top we define various cluster properties like the name and endpoint details. 
+1. We define the security group rules for the cluster nodes.
 1. The VPC and subnet ids need to be defined. We are passing the private subnet ids so the instances will not be publically accessable.
 1. Finally we define node groups, we provide the size of the instances and details of the auto scaling group.
 
