@@ -8,6 +8,7 @@
 
 
 {% include_relative _addon/main.scss %}
+{% include_relative _addon/notion.scss %}
 
 %category-icon-color {
   color: gray;

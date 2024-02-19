@@ -10,11 +10,12 @@ I have always been passionate about technology and now I work on problems from a
 
 My main interest is delivering high quality systems into production and getting them in the hands of real users. I believe that every project should be focused on delivering first, we need to focus on delivery and the approach or technology need to serve that goal.
 
+In addition to engineering I am a Notion Consultant who advises clients on designing and managing their Notion environments. 
+
+{% include all-certs.html %}
+
 ## Contact me
 
 If you want to discuss a new project or an interesting technical problem then please reach out to me.
 
-The best way to contact me is via my [Linked profile](https://www.linkedin.com/in/andrew-tarry-53a14022/).
-
-![AWS Developer](/assets/img/Developer-Associate.png)
-![CITP](/assets/img/mbcs-citp-badge-sm.png)
+{% include arrange-call.html %}

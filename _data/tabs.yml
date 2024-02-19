@@ -9,6 +9,11 @@
   name: Home
   icon: "fas fa-home"
 -
+  name: Notion Consulting
+  icon: "fas fa-stream"
+  path: tabs
+  url: notion
+-
   name: Categories
   icon: "fas fa-stream"
   path: tabs

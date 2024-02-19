@@ -1,0 +1,17 @@
+// Notion certs
+.notion_certs {
+
+  clear: both;
+  overflow: hidden;
+
+  .notion_cert_wrapper {
+    max-width: 32%;
+    float: left;
+  }
+
+  .notion_cert_logo {
+    max-width: 200;
+    max-height: 200px;
+    padding: 0 20px;
+  }
+}

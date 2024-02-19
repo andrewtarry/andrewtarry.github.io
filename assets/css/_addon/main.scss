@@ -1516,3 +1516,40 @@ table {
     margin-left: 41px;
   }
 }
+
+
+// Call Button
+.callBtnWrapper {
+  width: 100%;
+  clear: both;
+  text-align: center;
+  overflow: hidden;
+}
+.callBtn {
+  background-color: var(--highlight-bg-color);
+  border: none;
+  color: var(--highlighter-rouge-color);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.certs {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.cert_wrapper {
+  max-width: 45%;
+  float: left;
+  padding: 0 20px 10px 0;
+
+  img {
+    overflow: hidden;
+    max-width: 100%
+  }
+}
