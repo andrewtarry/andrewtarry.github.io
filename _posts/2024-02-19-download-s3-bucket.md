@@ -30,7 +30,6 @@ For most developers, this should be a comfortable approach, and if you are using
 
 ```bash
 aws s3 sync s3://my-bucket ./my-local-folder
-
 ```
 
 This command will copy the contents of a bucket named `my-bucket` to a local directory called `my-local-folder`. You could use an absolute path if the local directory is somewhere else. You can also use subfolders of the bucket if you want, like this: `s3://my-bucket/important/`.
